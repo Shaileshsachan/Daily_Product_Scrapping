@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from tabulate import tabulate
 import csv
+import pandas as pd
 # FLIPKART
 flipkart_dict = {
 'Amul_Milk': 'https://www.flipkart.com/amul-taaza-homogenised-toned-milk/p/itmexak2hfpzbuhf?pid=MLKEUGQGM65M2QZC&lid=LSTMLKEUGQGM65M2QZCF9AHJM&marketplace=GROCERY&fm=productRecommendation%2Fsimilar&iid=R%3As%3Bp%3AMLKFG9T8CBZD8G9G%3Bl%3ALSTMLKFG9T8CBZD8G9GVNBZGI%3Bpt%3App%3Buid%3A7d78f97a-5fa3-11eb-b8f3-759015255b6e%3B.MLKEUGQGM65M2QZC&ppt=pp&ppn=pp&ssid=5jmpa8xdts0000001611562994947&otracker=pp_reco_Similar%2BProducts_2_32.productCard.PMU_HORIZONTAL_Amul%2BTaaza%2BHomogenised%2BToned%2BMilk_MLKEUGQGM65M2QZC_productRecommendation%2Fsimilar_1&otracker1=pp_reco_PINNED_productRecommendation%2Fsimilar_Similar%2BProducts_GRID_productCard_cc_2_NA_view-all&cid=MLKEUGQGM65M2QZC',
@@ -74,6 +75,8 @@ def flipkart_scraper():
     to_csv(flipkart_dict,name='Flipkart')
 
 def to_csv(diict, name):
+    # df = pd.DataFrame('ProductName': products, 'Price':prices, 'Rating':ratings, 'Discount': discounts}))
+    # df.to_csv('products.csv', index=False, encoding='utf-8')
     with open(f'{name}.csv', 'w') as f:
         w = csv.writer(f)
         # w.writeheader()

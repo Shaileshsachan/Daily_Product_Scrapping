@@ -8,7 +8,7 @@ prices = []
 ratings = []
 discounts = []
 # driver.get("https://www.flipkart.com/search?q=iphone+11&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&as-pos=1&as-type=HISTORY&as-backfill=on")
-# driver.get("https://www.flipkart.com/search?q=laptops&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
+# driver.get("https://www.flipkart.com/search?q=nike&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
 content = driver.page_source
 
 soup = BeautifulSoup(content, features='lxml')
@@ -27,4 +27,4 @@ for a in soup.find_all('div', {'class': '_2kHMtA'}):
     discounts.append(discount)
 
 df = pd.DataFrame({'ProductName': products, 'Price':prices, 'Rating':ratings, 'Discount': discounts})
-df.to_csv('products1.csv', index=False, encoding='utf-8')
+df.to_csv('products4.csv', index=False, encoding='utf-8')
